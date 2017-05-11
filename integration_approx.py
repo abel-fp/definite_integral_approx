@@ -3,7 +3,7 @@ import numpy as np
 # function: function to be integrated in form "lambda x: f(x)"
 # x_min: lower bound of integration
 # x_max: upper bound of integration
-# step: step for approximation, the higher the better
+# step: step for approximation, the smaller the better
 
 def integral(function, x_min, x_max, step):
     s = np.arange(x_min, x_max + step, step)
@@ -16,4 +16,5 @@ def integral(function, x_min, x_max, step):
         sum += i
     return sum
 
+# example, the smaller the step the better
 print integral(lambda x: np.sin(x)**2 * x**2 * 10**-x, 0, np.pi, .000001)
